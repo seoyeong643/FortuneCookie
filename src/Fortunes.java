@@ -1,7 +1,8 @@
-public class Main {
+import java.util.Random;
+import java.util.Scanner;
 
-    //    from https://www.best-ever-cookie-collection.com/fortune-cookie-sayings.html
-    static String [] fortunes = {
+public class Fortunes {
+    static String[] generalFortunes = {
             "Do not be afraid of competition.",
             "An exciting opportunity lies ahead of you.",
             "You love peace.",
@@ -43,14 +44,16 @@ public class Main {
             "Move in the direction of your dreams.",
             "Bloom where you are planted.",
             "Appreciate. Appreciate. Appreciate.",
-            "Happy News is on its way.",
-
+            "Happy news is on its way."
+    };
+    static String[] funnyFortunes = {
             "A closed mouth gathers no feet.",
             "He who throws dirt is losing ground.",
             "Borrow money from a pessimist. They don't expect it back.",
             "Life is what happens to you while you are busy making other plans.",
-            "Help! I'm being held prisoner in a fortune cookie factory.",
-
+            "Help! I'm being held prisoner in a fortune cookie factory."
+    };
+    static String[] romanticFortunes = {
             "Paradise is always where love dwells.",
             "The one you love is closer than you think.",
             "Love is like wildflowers…it is often found in the most unlikely places.",
@@ -60,6 +63,30 @@ public class Main {
     };
 
     public static void main(String[] args) {
-        System.out.println(fortunes[0]);
+        Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
+
+        System.out.println("Crack open a Fortune Cookie!");
+        System.out.println("Please choose a category:");
+        System.out.println("1. General");
+        System.out.println("2. Funny");
+        System.out.println("3. Romantic");
+        System.out.print("Enter your choice (1-3): ");
+
+        int choice = scanner.nextInt();
+        String fortune;
+
+        fortune = switch (choice) {
+            case 1 -> generalFortunes[rand.nextInt(generalFortunes.length)];
+            case 2 -> funnyFortunes[rand.nextInt(funnyFortunes.length)];
+            case 3 -> romanticFortunes[rand.nextInt(romanticFortunes.length)];
+            default -> {
+                System.out.println("Invalid choice. Here's a general fortune instead:");
+                yield generalFortunes[rand.nextInt(generalFortunes.length)];
+            }
+        };
+
+        System.out.println("\nYour Fortune:");
+        System.out.println(fortune);
     }
 }

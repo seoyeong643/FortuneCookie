@@ -10,7 +10,7 @@ The fortune messages are sourced from [Best Ever Cookie Collection](https://www.
 
 ## Features
 - Displays a **random fortune** each time the program runs
-- Collection includes:
+- Allows the user to select a fortune **category**:
   - General inspirational quotes
   - Funny sayings
   - Romantic messages
@@ -35,10 +35,24 @@ The fortune messages are sourced from [Best Ever Cookie Collection](https://www.
 
 ## Example Output
 ```
+Select a category:
+1. General
+2. Funny
+3. Romantic
+
+Enter your choice (1, 2, or 3): 1
+
 Live this day as if it were your last.
 ```
 or
 ```
+Select a category:
+1. General
+2. Funny
+3. Romantic
+
+Enter your choice (1, 2, or 3): 2
+
 Borrow money from a pessimist. They don't expect it back.
 ```
 Each time you run the program, you'll get a new fortune!
@@ -51,5 +65,4 @@ Each time you run the program, you'll get a new fortune!
 ---
 
 ## Future Ideas
-- Categorize fortunes into types (General, Funny, Romantic) and allow user to select a category
 - Build a GUI (Graphical User Interface)
